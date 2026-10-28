@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO MATCH: Real-Time Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="status-indicator"></div>
+        <h1>NEO MATCH: Real-Time Matching Engine & Order Book Visualizer</h1>
+        <div class="header-stats">
+            <span class="status-text">ENGINE: ONLINE (Java/Triad)</span>
+            <span class="latency-text">LATENCY: <span id="latency">124</span>µs</span>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <!-- LEFT COLUMN: Live Stream -->
+        <section class="panel">
+            <h2>INCOMING ORDER STREAM (LIVE)</h2>
+            <div class="stream-headers">
+                <span>Action</span><span>Side</span><span>Name</span>
+            </div>
+            <div id="ticker-box" class="scroll-box"></div>
+        </section>
+
+        <!-- CENTER COLUMN: Order Book -->
+        <section class="panel order-book">
+            <h2>ORDER BOOK DEPTH MAP</h2>
+            
+            <h3 class="ask-title">ASKS (Sells)</h3>
+            <div class="book-header">
+                <span class="col-price">Price (₹)</span>
+                <span class="col-vol">Vol</span>
+                <span class="col-bar"></span>
+            </div>
+            <div id="asks-container" class="book-section"></div>
+            
+            <div id="spread-line" class="spread-line">SPREAD LINE (--)</div>
+            
+            <div id="bids-container" class="book-section"></div>
+            <h3 class="bid-title">BIDS (Buys)</h3>
+        </section>
+
+        <!-- RIGHT COLUMN: Value & Trades -->
+        <section class="panel right-panel">
+            <div class="value-box" style="margin-top: 0;">
+                <h2>TOTAL VALUE</h2>
+                <p class="total-value" id="total-value">₹0</p>
+            </div>
+
+            <div class="trades-box-container" style="margin-top: 20px;">
+                <h2>MATCHED TRADES</h2>
+                <div id="trades-box" class="scroll-box"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
